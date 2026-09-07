@@ -1,3 +1,4 @@
+"use client";
 import {
   Accordion,
   AccordionItem,
@@ -20,6 +21,7 @@ const frequentlyAskedQuestions = [
 export const FrequentlyAskedQuestionsSection = (): JSX.Element => {
   return (
     <section
+      id="faq"
       aria-labelledby="frequently-asked-questions-heading"
       className="w-full bg-neutral-50 px-4 py-[120px] sm:px-6"
     >
@@ -59,6 +61,12 @@ export const FrequentlyAskedQuestionsSection = (): JSX.Element => {
             </p>
             <Button
               type="button"
+              onClick={() => {
+                document.getElementById("contact-us")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+                document.getElementById("full-name")?.focus();
+              }}
               className="[font-family:'Plus_Jakarta_Sans',Helvetica] h-[57px] shrink-0 rounded-[30px] bg-[#059fde] px-5 text-sm font-medium leading-[25.2px] text-white hover:bg-[#059fde] sm:w-[209px] sm:px-10 sm:text-lg"
             >
               Ask Something

@@ -40,7 +40,7 @@ const partnerLogos = [
 
 export const LandingPage = (): JSX.Element => {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-white">
+    <div id="home" className="flex min-h-screen w-full flex-col bg-white">
       <main className="flex w-full flex-col">
         <DigitalBankingHeroSection />
         <section className="flex w-full items-center justify-center bg-white px-6 py-[46px] sm:px-10">

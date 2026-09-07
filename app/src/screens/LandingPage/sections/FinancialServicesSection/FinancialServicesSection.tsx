@@ -92,7 +92,7 @@ const ArrowButton = ({
 
 export const FinancialServicesSection = (): JSX.Element => {
   return (
-    <section className="w-full bg-neutral-50 px-4 py-[72px] sm:px-6 md:py-[120px]">
+    <section id="products" className="w-full bg-neutral-50 px-4 py-[72px] sm:px-6 md:py-[120px]">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center gap-12">
         <header className="flex max-w-[639px] flex-col items-center gap-5 text-center">
           <h2 className="[font-family:'Plus_Jakarta_Sans',Helvetica] text-4xl font-medium leading-[1.24] tracking-[0] text-[#0e0e0e] sm:text-5xl sm:leading-[59.5px]">
@@ -197,6 +197,9 @@ export const FinancialServicesSection = (): JSX.Element => {
                                 type="button"
                                 size="icon"
                                 aria-label={`View ${plan.name} details`}
+                                onClick={() => {
+                                  window.location.href = `/?plan=${encodeURIComponent(plan.name)}#contact-us`;
+                                }}
                                 className={`h-[32.44px] w-[32.44px] shrink-0 rounded-[16.22px] p-0 text-white hover:opacity-90 ${plan.actionBackground}`}
                               >
                                 <ArrowUpRightIcon className="h-4 w-4" />

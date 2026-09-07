@@ -1,4 +1,5 @@
 "use client";
+import { useState, type FormEvent } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
 import { Label } from "../../../../components/ui/label";
@@ -36,8 +37,17 @@ const formFields = [
 ];
 
 export const ContactUsSection = (): JSX.Element => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitted(true);
+    event.currentTarget.reset();
+  };
+
   return (
     <section
+      id="contact-us"
       aria-labelledby="contact-us-heading"
       className="w-full bg-[linear-gradient(0deg,rgba(255,255,255,1)_65%,rgba(5,159,222,1)_100%)] px-6 py-20 sm:px-10 lg:min-h-[773px] lg:px-[max(2rem,calc((100%-1125px)/2))] lg:py-[120px]"
     >
@@ -85,7 +95,7 @@ export const ContactUsSection = (): JSX.Element => {
         </div>
         <form
           className="flex w-full flex-col"
-          onSubmit={(event) => event.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-[26px]">
             <div className="grid gap-[22px] sm:grid-cols-2">
@@ -102,6 +112,7 @@ export const ContactUsSection = (): JSX.Element => {
                     name={field.id}
                     placeholder={field.placeholder}
                     type={field.type}
+                    required
                     className="h-[45px] rounded-[10px] border-[#dfdfdfee] bg-[#fcfcfc] px-3.5 py-3 [font-family:'Plus_Jakarta_Sans',Helvetica] text-sm font-normal leading-5 text-[#0e0e0e] placeholder:text-[#7e7e7e] focus-visible:ring-[#059fde]"
                   />
                 </div>
@@ -119,6 +130,7 @@ export const ContactUsSection = (): JSX.Element => {
                 name="subject"
                 placeholder="Tell us what you need"
                 type="text"
+                required
                 className="h-[45px] rounded-[10px] border-[#dfdfdfee] bg-[#fcfcfc] px-3.5 py-3 [font-family:'Plus_Jakarta_Sans',Helvetica] text-sm font-normal leading-5 text-[#0e0e0e] placeholder:text-[#7e7e7e] focus-visible:ring-[#059fde]"
               />
             </div>
@@ -133,6 +145,7 @@ export const ContactUsSection = (): JSX.Element => {
                 id="message"
                 name="message"
                 placeholder="Share your thought here..."
+                required
                 className="h-48 resize-none rounded-[10px] border-[#dfdfdfee] bg-[#fcfcfc] px-3.5 py-3 [font-family:'Plus_Jakarta_Sans',Helvetica] text-sm font-normal leading-5 text-[#0e0e0e] placeholder:text-[#7e7e7e] focus-visible:ring-[#059fde]"
               />
             </div>
@@ -143,6 +156,12 @@ export const ContactUsSection = (): JSX.Element => {
           >
             Submit
           </Button>
+          <p
+            aria-live="polite"
+            className={`mt-3 text-center [font-family:'Plus_Jakarta_Sans',Helvetica] text-sm text-[#058d39] ${isSubmitted ? "opacity-100" : "opacity-0"}`}
+          >
+            Thanks, we&apos;ll be in touch shortly.
+          </p>
         </form>
       </div>
     </section>
