@@ -21,7 +21,7 @@ const socialLinks = [
   { src: "/images/instagram.svg", alt: "Link" },
   { src: "/images/facebook.svg", alt: "Link" },
   { src: "/images/twitter.svg", alt: "Link" },
-  { src: "/images/linkedin.svg", alt: "Link" },
+  { src: "/images/linkedIn.svg", alt: "Link" },
 ];
 
 export const SiteFooterSection = (): JSX.Element => {

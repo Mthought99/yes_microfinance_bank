@@ -3,7 +3,7 @@ import { MobileBankingHeroSection } from "./sections/MobileBankingHeroSection/Mo
 export const Banking = (): JSX.Element => {
   return (
     <div className="flex min-h-screen w-full flex-col overflow-x-hidden bg-white">
-      <main className="flex w-full flex-col">
+      <main className="page-animate flex w-full flex-col">
         <MobileBankingHeroSection />
         <BankingProductsSection />
       </main>

@@ -2,47 +2,44 @@ import { Card, CardContent } from "../../../../components/ui/card";
 
 const investmentProducts = [
   {
-    title: "QR Code Payments",
+    title: "YesFlex",
     rate: "14% per annum",
     description:
-      "Generate and scan QR codes for instant, contactless payments. Perfect for merchants, events, and peer-to-peer transfers.",
-    image: "/images/qr-code-image.png",
+      "Save and earn with flexibility. Access your funds anytime you need them.",
+    image: "/images/african-saving-money.png",
     features: [
-      "Static & dynamic QR codes",
-      "Instant payment confirmation",
-      "No hardware required",
-      "Accept any mobile wallet",
-      "Transaction history & reconciliation",
+      "Flexible withdrawals",
+      "No lock-in period",
+      "Earn 14% p.a",
+      "Ideal for emergency savings",
     ],
     cardHeight: "min-h-[705px]",
   },
   {
-    title: "Card Issuance (Debit / Credit)",
+    title: "YesFixed",
     rate: "Up to 20% per annum",
     description:
-      "Issue physical and virtual cards for your business or personal use. Control spending limits and manage cards in real-time.",
-    image: "/images/credit-card-loan-image.png",
+      "Lock in higher returns with fixed-term investment plans.",
+    image: "/images/black-woman-talking-about-money.png",
     features: [
-      "Virtual & physical cards",
-      "Instant issuance via ap",
-      "Customizable spending limits",
-      "Freeze/unfreeze instantly",
-      "Contactless & chip-enabled",
+      "Fixed-term investment",
+      "Higher returns guaranteed",
+      "Multiple term options",
+      "Up to 20% p.a.",
     ],
     cardHeight: "min-h-[705px]",
   },
   {
-    title: "POS Terminal for Collection",
+    title: "YesTarget",
     rate: "14–20% per annum",
     description:
-      "Deploy POS terminals to accept card and QR payments at your store, restaurant, or event. Fast settlement and 24/7 support.",
-    image: "/images/pos-terminal-image.png",
+      "Save towards a specific goal with flexible contributions and a dedicated plan.",
+    image: "/images/man-writing-down-savings-plan.png",
     features: [
-      "Countertop & wireless options",
-      "Accepts all cards & QR",
-      "Real-time settlement",
-      "Integrated receipt printer",
-      "24/7 technical support",
+      "Goal-based savings",
+      "Flexible contributions",
+      "Track your progress",
+      "14–20% p.a.",
     ],
     cardHeight: "min-h-[721px]",
   },
@@ -76,7 +73,7 @@ export const InvestmentProductsSection = (): JSX.Element => {
                       {product.rate}
                     </span>
                     <br />
-                    <span className="text-[7px] font-semibold text-black">
+                    <span className="text-[12px] font-semibold text-black">
                       * before withholding tax
                     </span>
                   </p>

@@ -41,7 +41,7 @@ const partnerLogos = [
 export const LandingPage = (): JSX.Element => {
   return (
     <div id="home" className="flex min-h-screen w-full flex-col bg-white">
-      <main className="flex w-full flex-col">
+      <main className="page-animate flex w-full flex-col">
         <DigitalBankingHeroSection />
         <section className="flex w-full items-center justify-center bg-white px-6 py-[46px] sm:px-10">
           <div className="flex w-full max-w-[1024px] flex-wrap items-center justify-center gap-x-[78.91px] gap-y-8">

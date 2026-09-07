@@ -3,7 +3,7 @@ import { LoanProductsSection } from "./sections/LoanProductsSection/LoanProducts
 export const Loan = (): JSX.Element => {
   return (
     <div className="flex min-h-screen w-full flex-col bg-white">
-      <main className="flex w-full flex-col">
+      <main className="page-animate flex w-full flex-col">
         <LoanApprovalHeroSection />
         <LoanProductsSection />
       </main>
