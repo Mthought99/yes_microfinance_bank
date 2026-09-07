@@ -46,7 +46,7 @@ export const SiteHeaderSection = (): JSX.Element => {
     >
       <div className="mx-auto flex w-full max-w-[1310px] flex-wrap items-start justify-between gap-6">
         <Link
-          href={getHref("#top")}
+          href={getHref("#home")}
           aria-label="Yes Microfinance Bank home"
           onClick={() => handleNavigation("Home")}
           className="flex w-[243px] flex-col items-start justify-center gap-[7px]"
