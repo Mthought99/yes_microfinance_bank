@@ -53,7 +53,7 @@ const paymentProducts = [
       "Customizable amounts",
       "Instant delivery",
       "Redeemable at partner stores",
-      "Redeemable at partner stores",
+      "Balance management & tracking",
     ],
     cardHeight: "min-h-[705px]",
   },

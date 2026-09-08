@@ -6,6 +6,7 @@ import {
   TargetIcon,
   TrendingUpIcon,
 } from "lucide-react";
+import { useState, type ReactNode } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { useRouter } from "next/navigation";
@@ -58,6 +59,26 @@ const loanDetails = [
   { label: "Repayemnt", value: "₦103,500" },
 ];
 
+const HoverableCard = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: ReactNode;
+}) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <Card
+      className={`${className} ${isHovered ? "translate-y-[-4px] scale-[1.02] shadow-xl" : ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {children}
+    </Card>
+  );
+};
+
 const ArrowButton = ({
   label,
   href,
@@ -83,9 +104,12 @@ const ArrowButton = ({
       size="icon"
       aria-label={label}
       onClick={handleClick}
-      className="h-10 w-10 shrink-0 rounded-full border-0 bg-white p-0 text-[#0e0e0e] shadow-none hover:bg-white/90"
+      className="financial-services-arrow h-10 w-10 shrink-0 rounded-full border-0 bg-white p-0 text-[#0e0e0e] shadow-none transition-all duration-300 ease-out hover:bg-[#059FDE] hover:text-white hover:scale-105"
     >
-      <ArrowUpRightIcon className="h-[21px] w-[21px]" strokeWidth={2} />
+      <ArrowUpRightIcon
+        className="financial-services-arrow-icon h-[21px] w-[21px] transition-colors duration-300"
+        strokeWidth={2}
+      />
     </Button>
   );
 };
@@ -112,7 +136,7 @@ export const FinancialServicesSection = (): JSX.Element => {
         </header>
         <div className="flex w-full flex-col gap-[21px]">
           <div className="grid w-full grid-cols-1 gap-[21px] lg:grid-cols-3">
-            <Card className="relative h-[700px] overflow-hidden rounded-[30px] border-[0.89px] border-[#cecece] bg-[linear-gradient(270deg,rgba(228,228,228,1)_0%,rgba(216,216,216,1)_100%)] shadow-none">
+            <HoverableCard className="financial-services-card group relative h-[700px] overflow-hidden rounded-[30px] border-[0.89px] border-[#cecece] bg-[linear-gradient(270deg,rgba(228,228,228,1)_0%,rgba(216,216,216,1)_100%)] shadow-none transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
                 alt="Mask group"
@@ -133,8 +157,8 @@ export const FinancialServicesSection = (): JSX.Element => {
                   </p>
                 </div>
               </CardContent>
-            </Card>
-            <Card className="h-[700px] rounded-[30px] border-0 bg-[#d9d9d9] shadow-none">
+            </HoverableCard>
+            <HoverableCard className="financial-services-card group h-[700px] rounded-[30px] border-0 bg-[#d9d9d9] shadow-none transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl">
               <CardContent className="flex h-full flex-col p-[26px]">
                 <div className="flex flex-col gap-[21px]">
                   <div className="flex flex-col gap-3.5">
@@ -156,7 +180,7 @@ export const FinancialServicesSection = (): JSX.Element => {
                       return (
                         <Card
                           key={plan.name}
-                          className="rounded-[24.33px] border-[1.16px] border-[#dfdfdf] bg-white shadow-none"
+                          className="group/plan rounded-[24.33px] border-[1.16px] border-[#dfdfdf] bg-white shadow-none transition-transform duration-300 ease-out hover:-translate-y-1"
                         >
                           <CardContent className="flex flex-col gap-[19.7px] p-5 sm:p-[20px]">
                             <div className="flex items-start justify-between gap-3">
@@ -200,7 +224,7 @@ export const FinancialServicesSection = (): JSX.Element => {
                                 onClick={() => {
                                   window.location.href = `/?plan=${encodeURIComponent(plan.name)}#contact-us`;
                                 }}
-                                className={`h-[32.44px] w-[32.44px] shrink-0 rounded-[16.22px] p-0 text-white hover:opacity-90 ${plan.actionBackground}`}
+                                className={`h-[32.44px] w-[32.44px] shrink-0 rounded-[16.22px] p-0 text-white transition-colors duration-300 group-hover/plan:bg-[#059FDE] hover:opacity-90 ${plan.actionBackground}`}
                               >
                                 <ArrowUpRightIcon className="h-4 w-4" />
                               </Button>
@@ -212,8 +236,8 @@ export const FinancialServicesSection = (): JSX.Element => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
-            <Card className="relative h-[700px] overflow-hidden rounded-[30px] border-[0.89px] border-[#cecece] bg-[linear-gradient(270deg,rgba(229,228,227,1)_0%,rgba(218,218,217,1)_100%)] shadow-none">
+            </HoverableCard>
+            <HoverableCard className="financial-services-card group relative h-[700px] overflow-hidden rounded-[30px] border-[0.89px] border-[#cecece] bg-[linear-gradient(270deg,rgba(229,228,227,1)_0%,rgba(218,218,217,1)_100%)] shadow-none transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
                 alt="Mask group"
@@ -232,9 +256,9 @@ export const FinancialServicesSection = (): JSX.Element => {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </HoverableCard>
           </div>
-          <Card className="overflow-hidden rounded-[30px] border-0 bg-[#e0dfdf] shadow-none">
+          <HoverableCard className="financial-services-card group overflow-hidden rounded-[30px] border-0 bg-[#e0dfdf] shadow-none transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl">
             <CardContent className="p-5 sm:p-10">
               <div className="flex flex-col gap-[60px]">
                 <div className="flex flex-col gap-[7px]">
@@ -300,7 +324,7 @@ export const FinancialServicesSection = (): JSX.Element => {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </HoverableCard>
         </div>
       </div>
     </section>

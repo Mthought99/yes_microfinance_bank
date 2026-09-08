@@ -52,7 +52,7 @@ const certifications = [
     image: "images/ndic.png",
     imageAlt: "NDIC",
     imageClassName: "h-[17.56px] w-[45.16px]",
-    text: "Deposits insured by",
+    text: "Insured by NDIC",
     containerClassName: "gap-[8.93px]",
   },
 ];

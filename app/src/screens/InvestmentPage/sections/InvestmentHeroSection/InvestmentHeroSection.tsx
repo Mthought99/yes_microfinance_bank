@@ -27,7 +27,7 @@ const regulatoryDetails = [
   {
     image: "/images/ndic.png",
     imageAlt: "Deposit insurance logo",
-    text: "Deposits insured by",
+    text: "Insured by NDIC",
     imageClassName: "h-[17.56px] w-[45.16px] object-cover",
     containerClassName: "gap-[8.93px]",
     textClassName: "w-[99px]",

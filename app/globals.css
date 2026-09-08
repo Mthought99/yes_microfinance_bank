@@ -232,3 +232,19 @@
       "calt" 1;
   }
 }
+
+@layer components {
+  .financial-services-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 24px 60px -20px rgba(14, 14, 14, 0.18);
+  }
+
+  .financial-services-card:hover .financial-services-arrow {
+    background-color: #059fde;
+    color: #ffffff;
+  }
+
+  .financial-services-card:hover .financial-services-arrow-icon {
+    color: #ffffff;
+  }
+}
