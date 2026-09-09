@@ -1,21 +1,59 @@
 "use client";
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../../../../components/ui/accordion";
 import { Button } from "../../../../components/ui/button";
 
 const frequentlyAskedQuestions = [
-  "How Is Yes Bank Different from Other Banks?",
-  "Is My Money Safe with Yes MFB?",
-  "Why do you need my BVN and NIN",
-  "How do I apply for a loan?",
-  "How long does it take to get approved and what are the repayment terms?",
-  "What documents do I need?",
-  "Can I repay my loan early?",
-  "What happens if I miss a payment?",
-  "Is my personal information secure?",
+  {
+    question: "How Is Yes Bank Different from Other Banks?",
+    answer:
+      "Yes Bank is designed for simple, secure, and convenient everyday banking. We combine digital-first access, responsive support, and practical financial products such as loans, payments, and savings options in one place.",
+  },
+  {
+    question: "Is My Money Safe with Yes MFB?",
+    answer:
+      "Yes. We use secure banking systems, encrypted data handling, and strong verification checks to protect your account and transactions. Our processes are designed to help keep your money and personal information safe.",
+  },
+  {
+    question: "Why do you need my BVN and NIN",
+    answer:
+      "We request your BVN and NIN to verify your identity, prevent fraud, and comply with banking regulations. This helps us process account openings, loan applications, and other services securely.",
+  },
+  {
+    question: "How do I apply for a loan?",
+    answer:
+      "You can apply online through our website or mobile banking platform. Simply complete your details, upload the required documents, and submit your application for review. Our team will guide you through the next steps.",
+  },
+  {
+    question:
+      "How long does it take to get approved and what are the repayment terms?",
+    answer:
+      "Approval times vary depending on the product and how quickly your documents are verified. In most cases, applications are reviewed within a few business days. Repayment terms are clearly outlined before you proceed, with flexible options available based on your loan type.",
+  },
+  {
+    question: "What documents do I need?",
+    answer:
+      "Common requirements include a valid ID, BVN or NIN, proof of address, and basic financial information. The exact documents may vary depending on the product you are applying for.",
+  },
+  {
+    question: "Can I repay my loan early?",
+    answer:
+      "Yes, early repayment is usually available and can help reduce the overall interest you pay. Please check your loan agreement for any applicable terms or fees before making an early repayment.",
+  },
+  {
+    question: "What happens if I miss a payment?",
+    answer:
+      "A missed payment may lead to late charges and could affect your account standing. If this happens, please contact our support team as soon as possible so we can help you find the best next step.",
+  },
+  {
+    question: "Is my personal information secure?",
+    answer:
+      "Yes. We use secure systems, access controls, and privacy measures to protect your personal and financial information. We only share data where required by law or with your explicit consent.",
+  },
 ];
 
 export const FrequentlyAskedQuestionsSection = (): JSX.Element => {
@@ -36,7 +74,7 @@ export const FrequentlyAskedQuestionsSection = (): JSX.Element => {
           </h2>
         </header>
         <Accordion type="single" collapsible className="mt-8 w-full">
-          {frequentlyAskedQuestions.map((question, index) => (
+          {frequentlyAskedQuestions.map(({ question, answer }, index) => (
             <AccordionItem
               key={question}
               value={`question-${index + 1}`}
@@ -51,6 +89,11 @@ export const FrequentlyAskedQuestionsSection = (): JSX.Element => {
                   {question}
                 </span>
               </AccordionTrigger>
+              <AccordionContent className="pb-4">
+                <p className="[font-family:'Plus_Jakarta_Sans',Helvetica] max-w-[760px] text-base leading-7 tracking-[0] text-[#0e0e0e]/80 sm:text-lg pb-4">
+                  {answer}
+                </p>
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

@@ -65,9 +65,13 @@ interface TestimonialColumnProps {
 
 const columnMaskStyle = {
   WebkitMaskImage:
-    "linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)",
+    "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 92%, rgba(0, 0, 0, 0) 100%)",
   maskImage:
-    "linear-gradient(to bottom, transparent, black 25%, black 75%, transparent)",
+    "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 92%, rgba(0, 0, 0, 0) 100%)",
+  WebkitMaskSize: "100% 100%",
+  maskSize: "100% 100%",
+  WebkitMaskRepeat: "no-repeat",
+  maskRepeat: "no-repeat",
 };
 
 const TestimonialColumn = ({
@@ -75,7 +79,7 @@ const TestimonialColumn = ({
   testimonials: columnTestimonials,
   duration,
 }: TestimonialColumnProps) => (
-  <div className={`${className ?? ""} overflow-hidden`} style={columnMaskStyle}>
+  <div className={`${className ?? ""} h-full overflow-hidden`} style={columnMaskStyle}>
     <motion.div
       animate={{
         translateY: ["0%", "-50%"],
@@ -156,7 +160,7 @@ export const CustomerTestimonialsSection = (): JSX.Element => {
             their financial goals with confidence and ease.
           </p>
         </header>
-        <div className="grid w-full max-h-[600px] grid-cols-1 gap-5 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid h-[600px] w-full grid-cols-1 gap-5 overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
           <TestimonialColumn testimonials={firstColumn} duration={15} />
           <TestimonialColumn testimonials={secondColumn} duration={19} className="hidden sm:block" />
           <TestimonialColumn testimonials={thirdColumn} duration={17} className="hidden lg:block" />
